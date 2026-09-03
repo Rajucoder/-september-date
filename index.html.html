@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A Date For You ❤️</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:#fff7f5;color:#3d3032;font-family:Georgia,"Times New Roman",serif}
+.card{width:min(680px,100%);padding:42px 26px;text-align:center;border:1px solid #ead7d9;border-radius:28px;background:linear-gradient(145deg,#fffdfc,#faeeee);box-shadow:0 18px 50px rgba(80,45,50,.12)}
+.eyebrow{font:600 11px system-ui,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#9d6870}
+.heart{font-size:42px;margin:14px 0}
+h1{font-size:clamp(38px,9vw,64px);line-height:1.02;margin:0 0 14px}
+.subtitle{font:16px/1.7 system-ui,sans-serif;color:#756467;max-width:500px;margin:0 auto 28px}
+.date{background:white;border:1px solid #eadbdd;border-radius:18px;padding:19px;margin:24px auto;max-width:420px}
+.big{font-size:25px;font-weight:700}.small{font:13px system-ui,sans-serif;color:#896f73;margin-top:6px}
+button{border:0;border-radius:999px;padding:15px 26px;min-height:50px;background:#b76e79;color:#fff;font:600 15px system-ui,sans-serif;cursor:pointer}
+button:focus{outline:3px solid #e5b8bf;outline-offset:3px}
+.hidden{display:none}.reveal{animation:rise .5s ease both}
+.details{text-align:left;background:#fff9;padding:20px;border-radius:20px;margin-top:22px;font:14px/1.7 system-ui,sans-serif;color:#66585b}
+.details h3{font-family:Georgia,serif;font-size:19px;color:#3d3032;margin:0 0 10px}
+.details p{margin:8px 0}
+.signature{margin-top:22px;color:#b76e79;font-size:19px}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<main class="card">
+<div class="eyebrow">A special invitation</div>
+<div class="heart">♡</div>
+<h1>For My Favourite Man</h1>
+<p class="subtitle">Someone has decided that you deserve to be taken on a date… and this time, <em>I'm</em> doing the planning.</p>
+
+<section id="opening">
+<button id="open">Open Your Invitation ✨</button>
+</section>
+
+<section id="invite" class="hidden reveal" aria-live="polite">
+<div class="date">
+<div class="big">Monday · 7 September 2026</div>
+<div class="small">📍 Bengaluru · Just you &amp; me</div>
+</div>
+
+<h2>You have a date with your wife. ❤️</h2>
+<p class="subtitle">No planning. No decisions. No “what should we do?”</p>
+
+<div class="details">
+<h3>What you need to know</h3>
+<p>✨ <strong>Dress code:</strong> Look handsome. That's all.</p>
+<p>🕰️ <strong>Time:</strong> Keep your evening free.</p>
+<p>🍽️ <strong>Plan:</strong> A little surprise, good food, and time together.</p>
+<p>💌 <strong>Most important:</strong> Bring yourself. I'll take care of the rest.</p>
+</div>
+
+<p style="margin-top:28px"><button id="accept">Yes, I’m Coming ❤️</button></p>
+<div id="accepted" class="hidden signature">Date accepted! 💕<br>
+<span style="font:13px system-ui,sans-serif;color:#806b6e">Your wife is officially looking forward to September 7.</span></div>
+</section>
+</main>
+<script>
+const open=document.getElementById("open");
+const opening=document.getElementById("opening");
+const invite=document.getElementById("invite");
+const accept=document.getElementById("accept");
+const accepted=document.getElementById("accepted");
+open.addEventListener("click",()=>{opening.classList.add("hidden");invite.classList.remove("hidden")});
+accept.addEventListener("click",()=>{accept.classList.add("hidden");accepted.classList.remove("hidden")});
+</script>
+</body>
+</html>
